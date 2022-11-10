@@ -13,7 +13,7 @@ def load_data(rows):
     data = data.head(rows)
     return data
 
-data = load_data(1950000)
+data = load_data(1000000)
 
 
 # for use with dropdown

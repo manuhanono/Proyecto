@@ -1,10 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pydeck as pdk
-import plotly.express as px
-from datetime import datetime
-import plotly.figure_factory as ff
 
 #DATA_URL = ("https://github.com/chairielazizi/streamlit-collision/blob/master/Motor_Vehicle_Collisions_-_Crashes.csv?raw=true")
 
@@ -58,24 +54,3 @@ data = data[mask_years]
 if st.checkbox("Visualizar Datos Crudos",False):
     st.subheader("Datos Crudos")
     st.write(data.tail(10))
-
-st.header("Where are the most people injured in NYC?")
-#injured_people = st.slider("Number of persons injured in NYC",0,19)
-st.map(data.query("lat <= 41 & lat > 39")[['lat', 'lon']].dropna(how="any"))
-
-st.header("Preg 1")
-fig = px.histogram(data, x="CANT_AUTOS")
-st.plotly_chart(fig, use_container_width=True)
-
-st.header("AA")
-st.bar_chart(data=data, x="PINJ", y="BOROUGH")
-# make a dropdown search
-st.header("Top 5 dangerous streets affected by types")
-select = st.selectbox("Affected by type of people", ['Pedestrians', 'Cyclists', 'Motorists'])
-
-if select == 'Pedestrians':
-    st.write(original_data.query("injured_pedestrians >= 1")[['on_street_name', 'injured_pedestrians']].sort_values(by=['injured_pedestrians'], ascending=False).dropna(how='any')[:5])
-elif select == 'Cyclists':
-    st.write(original_data.query("injured_cyclists >= 1")[['on_street_name', 'injured_cyclists']].sort_values(by=['injured_cyclists'], ascending=False).dropna(how='any')[:5])
-elif select == 'Motorists':
-    st.write(original_data.query("injured_motorists >= 1")[['on_street_name', 'injured_motorists']].sort_values(by=['injured_motorists'], ascending=False).dropna(how='any')[:5])

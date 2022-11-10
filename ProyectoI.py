@@ -33,8 +33,6 @@ for i in range(len(data)):
         data['CANT_AUTOS'][i] = 3
     elif data["VEHICLE TYPE CODE 5"][i] == "":
         data['CANT_AUTOS'][i] = 4
-    return data
-
     
 # for use with dropdown
 original_data = data

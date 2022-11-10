@@ -4,7 +4,7 @@ import numpy as np
 
 #DATA_URL = ("https://github.com/chairielazizi/streamlit-collision/blob/master/Motor_Vehicle_Collisions_-_Crashes.csv?raw=true")
 
-DATA_URL1 = ("https://github.com/manuhanono/Proyecto/blob/main/crashes2.parquet?raw=true)
+DATA_URL1 = ("https://github.com/manuhanono/Proyecto/blob/main/crashes2.parquet?raw=true")
 
 
 @st.cache(persist=True)

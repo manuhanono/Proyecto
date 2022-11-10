@@ -52,7 +52,7 @@ if st.checkbox("Visualizar Datos Crudos",False):
 
 st.header("Where are the most people injured in NYC?")
 #injured_people = st.slider("Number of persons injured in NYC",0,19)
-st.map(data.query("lat <= 41 & lat > 39")[['lat', 'lon']].dropna(how="any"))
+st.map(data.query("lat <= 41 & lat > 39 & lon > 70 & lon < 80")[['lat', 'lon']].dropna(how="any"))
 
 st.header("Preg 1")
 fig = px.histogram(data, x="CANT")

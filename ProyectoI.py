@@ -22,6 +22,19 @@ data['MONTH'] = pd.DatetimeIndex(data['DATE']).month
 data['CANT_AUTOS'] = 5
 data = data.replace({pd.NA: ""})
 
+for i in range(len(data)):
+    if data["VEHICLE TYPE CODE 1"][i] == "":
+        data['CANT_AUTOS'][i] = 0
+    elif data["VEHICLE TYPE CODE 2"][i] == "":
+        data['CANT_AUTOS'][i] = 1
+    elif data["VEHICLE TYPE CODE 3"][i] == "":
+        data['CANT_AUTOS'][i] = 2
+    elif data["VEHICLE TYPE CODE 4"][i] == "":
+        data['CANT_AUTOS'][i] = 3
+    elif data["VEHICLE TYPE CODE 5"][i] == "":
+        data['CANT_AUTOS'][i] = 4
+    return data
+
     
 # for use with dropdown
 original_data = data

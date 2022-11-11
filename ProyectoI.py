@@ -58,6 +58,10 @@ st.header("Preg 1")
 fig = px.histogram(data, x="WEEKDAY", y="CANT", color = "PINJ")
 st.plotly_chart(fig, use_container_width=True)
 
+fig = px.bar(data, x="CANT", y="PINJ", color="BOROUGH", barmode="group",
+             facet_row="YEAR", facet_col="WEEKDAY")
+st.plotly_chart(fig, use_container_width = True)
+
 st.header("AA")
 st.bar_chart(data=data, x="PINJ", y="BOROUGH")
 # make a dropdown search

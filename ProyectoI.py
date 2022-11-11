@@ -55,7 +55,7 @@ st.header("Where are the most people injured in NYC?")
 st.map(data.query("lat <= 41 & lat > 39 & lon > -80 & lon < -70")[['lat', 'lon']].dropna(how="any"))
 
 st.header("Preg 1")
-fig = px.histogram(data, x="CANT", y="WEEKDAY", color = "PINJ")
+fig = px.histogram(data, x="WEEKDAY", y="CANT", color = "PINJ")
 st.plotly_chart(fig, use_container_width=True)
 
 st.header("AA")

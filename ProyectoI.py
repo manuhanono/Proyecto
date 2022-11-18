@@ -9,11 +9,12 @@ DATA_URL1 = ("https://github.com/manuhanono/Proyecto/blob/main/crashes2.parquet?
 
 
 @st.cache(persist=True)
-def load_data():
+def load_data(rows):
     data = pd.read_parquet(DATA_URL1)
+    data = data.sample(n=rows)
     return data
 
-data = load_data()
+data = load_data(500000)
 # for use with dropdown
 original_data = data
 

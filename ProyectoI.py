@@ -25,17 +25,17 @@ st.markdown("Manuel Hanono y Bruno Soifer.")
 st.sidebar.header("Filtrar por:")
 
 # Create a list of possible values and multiselect menu with them in it.
-YEARS = data['YEAR'].unique()
-with st.sidebar:
-    container = st.container()
-    all = st.checkbox("Todos los años")    
-    if all:
-        YEARS_SELECTED = container.multiselect("Seleccionar uno o mas años:", YEARS,YEARS)
-    else:
-        YEARS_SELECTED =  container.multiselect("Seleccionar uno o mas años:", YEARS)
+#YEARS = data['YEAR'].unique()
+#with st.sidebar:
+ #   container = st.container()
+  #  all = st.checkbox("Todos los años")    
+   # if all:
+    #    YEARS_SELECTED = container.multiselect("Seleccionar uno o mas años:", YEARS,YEARS)
+    #else:
+     #   YEARS_SELECTED =  container.multiselect("Seleccionar uno o mas años:", YEARS)
 # Mask to filter dataframe
-mask_years = data['YEAR'].isin(YEARS_SELECTED)
-data = data[mask_years]
+#mask_years = data['YEAR'].isin(YEARS_SELECTED)
+#data = data[mask_years]
 
 # Mismo filtro para los barrios (ver si vale la pena)
 # BOROUGH = data['BOROUGH'].unique()
@@ -55,7 +55,7 @@ st.header("Preg 1")
 fig = px.histogram(data, x="WEEKDAY", y="CANT", color = "PINJ")
 st.plotly_chart(fig, use_container_width=True)
 
-fig2 = px.bar(data, x="YEAR", y="CANT", color="BOROUGH", barmode="group", facet_col="BOROUGH")
+fig2 = px.bar(data, x="YEAR", y="BOEOUGH", color="BOROUGH", facet_col="BOROUGH")
 st.plotly_chart(fig2, use_container_width = True)
 
 st.header("AA")

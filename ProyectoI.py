@@ -22,7 +22,7 @@ original_data = data
 st.title("Trabajo Final Proyecto I - NY Crashes")
 st.markdown("Manuel Hanono y Bruno Soifer.")
 
-st.sidebar.header("Filtrar por:")
+# st.sidebar.header("Filtrar por:")
 
 # Create a list of possible values and multiselect menu with them in it.
 #YEARS = data['YEAR'].unique()

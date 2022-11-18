@@ -5,18 +5,11 @@ import pydeck as pdk
 import plotly.express as px
 from datetime import datetime
 import plotly.figure_factory as ff
-
-#DATA_URL = ("https://github.com/chairielazizi/streamlit-collision/blob/master/Motor_Vehicle_Collisions_-_Crashes.csv?raw=true")
-
 DATA_URL1 = ("https://github.com/manuhanono/Proyecto/blob/main/crashes2.parquet?raw=true")
 
 
 @st.cache(persist=True)
-def load_data():
-    data = pd.read_parquet(DATA_URL1)
-    return data
-
-data = load_data()
+data = pd.read_parquet(DATA_URL1)
 
 # for use with dropdown
 original_data = data
@@ -52,7 +45,7 @@ if st.checkbox("Visualizar Datos Crudos",False):
 
 st.header("Where are the most people injured in NYC?")
 #injured_people = st.slider("Number of persons injured in NYC",0,19)
-st.map(data.query("lat <= 41 & lat > 39 & lon > -80 & lon < -70")[['lat', 'lon']].dropna(how="any"))
+#st.map(data.query("lat <= 41 & lat > 39 & lon > -80 & lon < -70")[['lat', 'lon']].dropna(how="any"))
 
 st.header("Preg 1")
 fig = px.histogram(data, x="WEEKDAY", y="CANT", color = "PINJ")

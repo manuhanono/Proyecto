@@ -9,8 +9,11 @@ DATA_URL1 = ("https://github.com/manuhanono/Proyecto/blob/main/crashes2.parquet?
 
 
 @st.cache(persist=True)
-data = pd.read_parquet(DATA_URL1)
+def load_data():
+    data = pd.read_parquet(DATA_URL1)
+    return data
 
+data = load_data()
 # for use with dropdown
 original_data = data
 

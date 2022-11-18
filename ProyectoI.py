@@ -15,8 +15,7 @@ def load_data(rows):
     return data
 
 data = load_data(500000)
-# for use with dropdown
-original_data = data
+
 
 
 st.title("Trabajo Final Proyecto I - NY Crashes")

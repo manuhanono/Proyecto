@@ -55,7 +55,7 @@ st.header("Preg 1")
 fig = px.histogram(data, x="WEEKDAY", y="CANT", color = "PINJ")
 st.plotly_chart(fig, use_container_width=True)
 
-fig2 = px.bar(data, x="YEAR", y="BOROUGH", color="BOROUGH", facet_col="BOROUGH")
+fig2 = px.bar(data, x="YEAR", y="BOROUGH", color="BOROUGH")
 st.plotly_chart(fig2, use_container_width = True)
 
 st.header("AA")

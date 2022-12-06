@@ -11,7 +11,7 @@ library(rnaturalearthdata)
 library(sf)
 library(RColorBrewer)
 
-crashes = read_parquet("/Users/manu/TP_PROYECTO/crashes2.parquet")
+crashes = read_parquet("https://github.com/manuhanono/Proyecto/blob/main/crashes2.parquet?raw=true")
 # Plot
 g1 <- crashes %>% group_by(Hora = substr(`CRASH TIME`,start = 1, stop = 2),Dia = WEEKDAY) %>% summarise(Cantidad=n()) %>% ggplot() + geom_point(aes(x=Hora, y=Cantidad, color=Dia)) +
   ggtitle("Cantidad de accidentes de tránsito por día y hora") + theme_minimal() + scale_color_manual(values = c("#08306B","#08519C","#27a4f2", "#3eaef4","#77cff2", "#8ad6f4", "#b9e7f8"))

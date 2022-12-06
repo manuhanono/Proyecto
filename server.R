@@ -9,9 +9,9 @@ library(rnaturalearth)
 library(rnaturalearthdata)
 library(RColorBrewer)
 
-crashes = read_parquet("/Users/manu/TP_PROYECTO/crashes2.parquet")
+crashes = read_parquet("https://github.com/manuhanono/Proyecto/blob/main/crashes2.parquet?raw=true")
 
-source("helpers.R")
+source("https://raw.githubusercontent.com/manuhanono/Proyecto/main/helpers.R")
 
 
 # Define server logic required to draw a histogram
